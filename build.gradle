@@ -1,0 +1,42 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:0.13.+'
+    }
+}
+apply plugin: 'android'
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+android {
+    compileSdkVersion 19
+    buildToolsVersion "19.1"
+
+    defaultConfig {
+        minSdkVersion 10
+        targetSdkVersion 19
+    }
+
+    lintOptions {
+        abortOnError false
+    }
+}
+/*packagingOptions {
+    exclude 'META-INF/LICENSE'
+    exclude 'META-INF/LICENSE-FIREBASE.txt'
+    exclude 'META-INF/NOTICE'
+}*/
+
+dependencies {
+    compile 'com.android.support:appcompat-v7:19.1.0'
+    //compile 'pt.lighthouselabs.obd:obd-java-api:0.7'
+    compile 'org.roboguice:roboguice:3.0b-experimental'
+    compile 'com.squareup.retrofit:retrofit:1.6.1'
+   compile 'com.firebase:firebase-client-android:2.0.3+'
+}
